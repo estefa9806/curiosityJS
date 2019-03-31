@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-require('../views/listadocursos.hbs');
+require('../views/listadocursos.js');
 const path = require('path');
 const hbs = require('hbs');
 const bodyParser = require('body-parser');
@@ -83,9 +83,9 @@ app.get('/cursos_disponibles', (req, res) => {
     }
 });
 
-app.get('*', (req, res) => {
+/*app.get('*', (req, res) => {
     res.render('error');
-});
+});*/
 
 app.listen(3000, () => {
     console.log("Express server on port 3000");
