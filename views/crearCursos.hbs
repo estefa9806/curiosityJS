@@ -1,0 +1,48 @@
+{{>header}}
+
+<h2>
+    Crear Cursos
+</h2>
+<form action="cursos_disponibles">
+    <table class="egt">
+  <tr>
+    <td>Id:</td>
+    <td><input type="number" name="idcurso" required="true"><br></td>
+  </tr>
+  <tr>
+    <td>Nombre:</td>
+    <td><input type="text" name="nombrecurso" required="true" ><br></td>
+  </tr>
+  <tr>
+    <td>Descripcion:</td>
+    <td><input type="text" name="descripcioncurso" required="true"><br></td>
+  </tr>
+  <tr>
+    <td>Valor:</td>
+    <td><input type="text" name="valor" required="true"><br></td>
+  </tr>
+
+  <tr>
+      <td>Modalidad:</td>
+ <td>
+      <select name="modalidad">
+     <option value="">Seleccionar</option>
+     <option value="virtual">Virtual</option>
+    <option value="presencial">Presencial</option>
+  </td>
+</select>
+  </tr>
+  <tr>
+    <td>Intensidad horaria:</td>
+    <td><input type="number" name="intensidadhoraria"><br></td>
+  </tr>
+
+  <tr>
+      <td></td>
+      <td><p align="center"><button>Enviar</button></p></td>
+  </tr>
+</table>
+    
+</form>
+
+{{>footer}}
