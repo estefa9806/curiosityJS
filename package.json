@@ -1,0 +1,19 @@
+{
+  "name": "cursoscuriosity",
+  "version": "1.0.0",
+  "description": "practica curso nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/estefa9806/curiosityJS.git"
+  },
+  "author": "estefa9806 y rafael",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/estefa9806/curiosityJS/issues"
+  },
+  "homepage": "https://github.com/estefa9806/curiosityJS#readme"
+}

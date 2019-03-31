@@ -1,11 +1,11 @@
 const express = require('express');
 const app = express();
+require('../views/listadocursos.hbs');
 const path = require('path');
 const hbs = require('hbs');
 const bodyParser = require('body-parser');
 const crud = require('./crud');
-//require('./helpers');
-
+const crudCursos = require('./crudCurso');
 const directorioPublico = path.join(__dirname, '../public');
 const directorioPartials = path.join(__dirname, '../partials');
 
@@ -27,6 +27,9 @@ app.get('/ingreso', (req, res) => {
     res.render('ingreso');
 });
 
+app.get('/crearCursos', (req, res) => {
+    res.render('crearCursos');
+});
 app.get('/administracion', (req, res) => {
     console.log(req.query);
     crud.listar();
@@ -54,7 +57,7 @@ app.get('/administracion', (req, res) => {
 app.get('/cursos_disponibles', (req, res) => {
     crud.listar();
     let estudiante = listaEstudiantes.find(buscar => buscar.id == req.query.id);
-    
+    let cursos = listaCurso.find(busqueda => busqueda.idcurso == req.query.idcurso);
     if (!estudiante) {
         crud.crear(req.query);
         res.render('cursos_disponibles', {
@@ -63,8 +66,18 @@ app.get('/cursos_disponibles', (req, res) => {
             correo: req.query.correo,
             telefono: req.query.telefono
         });
+    }else if(!cursos){
+        crudCursos.crear(req.query);
+        res.render('cursos_disponibles', {
+            idcurso: req.query.idcurso,
+            nombrecurso: req.query.nombrecurso,
+            valor: req.query.valor,
+            descripcioncurso: req.query.descripcioncurso,
+            modalidad:req.query.modalidad,
+            intensidadhoraria:req.query.intensidadhoraria
+        });
     }
-    else {
+    else  {
         console.log('Registo invalido');
         res.render('registro');
     }
