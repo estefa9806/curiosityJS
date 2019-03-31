@@ -2,32 +2,31 @@ const hbs =require('hbs');
 
 hbs.registerHelper('listar',()=>
 {
-    listaCurso=require('../bdCursos.json');
+    listaEstudiante=require('../bdCursos.json');
     let texto="<table>\
         <thead>\
         <tr>\
-        <th colspan='4'>Listado de cursos</th>\
+        <th colspan='4'>Promedio estudiantes</th>\
       </tr>\
             <th>id</th>\
             <th>nombre</th>\
-            <th>descripcion</th>\
             <th>valor</th>\
-             <th>Estado</th>\
-            <th>Intensidad</th>\
-            <th>Modalidad</th>\
-           
+            <th>estado</th>\
+            <th>modalidad</th>\
+            <th>intensidadhoraria</th>\
+            <th>descripcion</th>\
         </thead>\
         <tbody>";
     listaCurso.forEach(cursos=>{
     texto=texto
-     +'<tr>'+
+    +'<tr>'+
     '<td>'+ cursos.idcurso+'</td>'+
     '<td>'+ cursos.nombrecurso+'</td>'+
-     '<td>'+ cursos.descripcioncurso+'</td>'+
     '<td>'+cursos.valor+'</td>'+
     '<td>'+cursos.estado+'</td>'+
-     '<td>'+cursos.intensidadhoraria+'</td>'+
-    '<td>'+cursos.modalidad+'</td>'+'</tr>'
+    '<td>'+cursos.modalidad+'</td>'+
+    '<td>'+cursos.descripcioncurso+'</td>'+
+    '<td>'+cursos.intensidadhoraria+'</td>'+'</tr>'
     });
     texto=texto+'</tbody>'+'</table>';
         return texto;
