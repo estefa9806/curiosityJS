@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/estefa9806/curiosityJS/issues"
   },
-  "homepage": "https://github.com/estefa9806/curiosityJS#readme"
+  "homepage": "https://github.com/estefa9806/curiosityJS#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "hbs": "^4.0.3",
+    "yargs": "^13.2.2"
+  }
 }
