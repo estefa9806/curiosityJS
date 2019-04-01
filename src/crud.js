@@ -78,9 +78,9 @@ const actualizar = (id, nom, correo, tel, tipo) => {
 
 const eliminar = (id) => {
     listar();
-    console.log(listaEstudiantes);
+    //console.log(listaEstudiantes);
     let nuevo = listaEstudiantes.filter(est => est.id != id);
-    console.log(nuevo);
+    //console.log(nuevo);
     if(nuevo.length == listaEstudiantes.length){
         console.log('No se encontró un estudiante con este ID');
     }

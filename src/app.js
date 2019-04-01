@@ -8,6 +8,7 @@ const crud = require('./crud');
 const crudCursos = require('./crudCurso');
 const directorioPublico = path.join(__dirname, '../public');
 const directorioPartials = path.join(__dirname, '../partials');
+const port = process.env.PORT || 3000;
 
 app.use(express.static(directorioPublico));
 hbs.registerPartials(directorioPartials);
@@ -43,7 +44,7 @@ app.get('/actualizar_Est', (req, res) => {
 });
 
 app.get('/listar_estudiantes', (req, res) => {
-    console.log(req.query.id);
+    //console.log(req.query.id);
     if (req.query.id != undefined) {
         crud.actualizar(req.query.id, req.query.nombre, req.query.correo, req.query.telefono, req.query.tipo);
     }
@@ -51,7 +52,7 @@ app.get('/listar_estudiantes', (req, res) => {
 });
 
 app.get('/administracion', (req, res) => {
-    console.log(req.query);
+    //console.log(req.query);
     crud.listar();
     let estudiante = listaEstudiantes.find(busqueda => busqueda.id == req.query.id);
     if (!estudiante) {
@@ -107,6 +108,6 @@ app.get('/cursos_disponibles', (req, res) => {
     res.render('error');
 });*/
 
-app.listen(3000, () => {
-    console.log("Express server on port 3000");
+app.listen(port, () => {
+    console.log("Escuchando en el puerto " + port);
 });
