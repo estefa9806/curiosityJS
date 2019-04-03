@@ -104,9 +104,9 @@ app.get('/cursos_disponibles', (req, res) => {
     }
 });
 
-/*app.get('*', (req, res) => {
+app.get('*', (req, res) => {
     res.render('error');
-});*/
+});
 
 app.listen(port, () => {
     console.log("Escuchando en el puerto " + port);
