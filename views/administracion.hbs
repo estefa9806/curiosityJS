@@ -1,16 +1,54 @@
 {{>header}}
 
-<h2>
-    Administrar cursos
-</h2>
+<h1>
+  Administración
+</h1>
+<h2>Crear cursos</h2>
+<form action="cursos_disponibles">
+  <table class="egt">
+    <tr>
+      <td>Id:</td>
+      <td><input type="number" name="idcurso" required="true"><br></td>
+    </tr>
+    <tr>
+      <td>Nombre:</td>
+      <td><input type="text" name="nombrecurso" required="true"><br></td>
+    </tr>
+    <tr>
+      <td>Descripcion:</td>
+      <td><input type="text" name="descripcioncurso" required="true"><br></td>
+    </tr>
+    <tr>
+      <td>Valor:</td>
+      <td><input type="text" name="valor" required="true"><br></td>
+    </tr>
 
-<p>Acá se listan los cursos disponibles y cerrados (por implementar)</p>
+    <tr>
+      <td>Modalidad:</td>
+      <td>
+        <select name="modalidad">
+          <option value="">Seleccionar</option>
+          <option value="virtual">Virtual</option>
+          <option value="presencial">Presencial</option>
+      </td>
+      </select>
+    </tr>
+    <tr>
+      <td>Intensidad horaria:</td>
+      <td><input type="number" name="intensidadhoraria"><br></td>
+    </tr>
 
-<h3>Datos del coordinador</h3>
-   <p>Identificación: {{id}} </p>
-   <p>Nombre: {{nombre}} </p>
-   <p>Correo: {{correo}} </p>
-   <p>Teléfono: {{telefono}} </p>
-   <br>
-   
+    <tr>
+      <td></td>
+      <td>
+        <p align="center"><button>Enviar</button></p>
+      </td>
+    </tr>
+  </table>
+</form>
+<br>
+<h2>Administrar estudiantes</h2>
+<p><a href="listar_estudiantes">Mostrar todos los estudiantes</a></p>
+<p><a href="eliminar_est">Eliminar estudiantes</a></p>
+<p><a href="actualizar_est">Actualizar datos de estudiantes</a></p>
 {{>footer}}
